@@ -1,5 +1,6 @@
 #zacznijmy nasz scrypt od zadeklarowania klasy
 #dodatkowo klase trzeba zamknąć end
+#pamietaj ze nazwa klasy musi byc z duzej litery! bo inaczej wywali blad
 class Kot
 end
 
