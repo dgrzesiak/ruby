@@ -29,9 +29,8 @@ int main()
   //wczytanie liczb
   for(int i=0;i<n;i++)
     cin>>tab[i];
- 
   sortowanie_babelkowe(tab,n);
-	cout<<"Twoje posortowane liczby:";
+    cout<<"Twoje posortowane liczby:";
   //wypisanie posortowanych elementów
   for(int i=0;i<n;i++)
           cout<<tab[i]<<" ";
