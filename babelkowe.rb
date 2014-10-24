@@ -6,9 +6,9 @@ module Sortowanie
 	  while j < k - 1 do
 	    if tab[j] > tab[j+1]
 	      pom = tab[j] 
-		    tab[j] = tab[j+1] 
-		    tab[j+1] = pom 
-      end
+              tab[j] = tab[j+1] 
+	      tab[j+1] = pom 
+            end
 	    j = j + 1
 	  end
 	  k-=1
@@ -18,17 +18,10 @@ module Sortowanie
   module_function :babelkowe
 end
 
+
 begin
-  print "Podaj dlugosc ciagu liczb:"
-  n2=gets.chomp!
-  n=n2.to_i
-  tab = []
-  print "\nPodaj te liczby:\n"
-  while n > 0
-    tab << liczba2=gets.chomp!
-	liczba = liczba2.to_i
-    n = n-1
-  end
+#probowalem zrobic z wczytywaniem danych do tablicy ale niestety przy sortowaniu takie liczby jak 45 byly mniejsze od 5
+  tab = [41,5,23,-10,12,-9,14,56]
   print "\nO to wartości w twojej tablicy przed sortowaniem:\n"
   puts tab
   print "\nTablica posortowana:\n"
