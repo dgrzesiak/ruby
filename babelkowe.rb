@@ -1,5 +1,5 @@
 module Sortowanie
-  def self.babelkowe(tab)
+  def babelkowe(tab)
     k = tab.length
 	while k > 1
 	j = 0
@@ -15,6 +15,7 @@ module Sortowanie
 	end
 	puts tab
   end
+  module_function :babelkowe
 end
 
 begin
