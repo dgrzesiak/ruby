@@ -5,10 +5,9 @@ end
 
 #do tej klasy trzeba będzie dodać jakiś inicjalizator
 class Kot
-	def initialize
-		print "Kot zostal dodany\n"
-	end
-	
+  def initialize
+    print "Kot zostal dodany\n"
+  end
 end
 #teraz warto dodać do tego wywołanie
 $kot = Kot.new
@@ -16,12 +15,12 @@ $kot = Kot.new
 #i ta klasa zostanie wywołana w momencie deklaracji Kot.new
 #warto by było dodać do tego nową metodę np koty lubią mleko
 class Kot
-def initialize
-		print "Kot zostal dodany\n"
-	end
-def mleko
-		print "Kot dostal mleko\n"
-	end
+  def initialize
+    print "Kot zostal dodany\n"
+  end
+  def mleko
+    print "Kot dostal mleko\n"
+  end
 end
 #aby to wywołać wystarczy dodać
 $kot.mleko
@@ -29,45 +28,42 @@ $kot.mleko
 #a teraz załóżmy ze koty maja 7 żyć
 $zycie= 7
 class Kot
-def initialize
-		print "Kot zostal dodany\n"
-	end
-def mleko
-		print "Kot dostal mleko\n"
-	end
-def zycie
-		
-		print ("ten kot ma :")
-		print $zycie
-		print (" zyc\n")
-	end
+  def initialize
+    print "Kot zostal dodany\n"
+  end
+  def mleko
+    print "Kot dostal mleko\n"
+  end
+  def zycie
+    print ("ten kot ma :")
+    print $zycie
+    print (" zyc\n")
+  end
 end	
 $kot.zycie
 #=>ten kot ma : 7 zyc
 #wiemy ze koty spadaja na 4 łapy i załóżmy ze traca przez to 1 życie
 class Kot
-$zycie= 7
-def initialize
-		print "Kot zostal dodany\n"
-	end
-def mleko
-		print "Kot dostal mleko\n"
-	end
-def zycie
-		
-		print ("ten kot ma :")
-		print $zycie
-		print (" zyc\n")
-	end
-def utrata(y)
-		if y== 1
-		$zycie = $zycie - 1
-		print"niestety twoj kot spadl na cztery łapy\n"
-		print "kot ma teraz:"
-		print $zycie
-		end
-		
-	end
+  $zycie= 7
+  def initialize
+    print "Kot zostal dodany\n"
+  end
+  def mleko
+    print "Kot dostal mleko\n"
+  end
+  def zycie
+    print ("ten kot ma :")
+    print $zycie
+    print (" zyc\n")
+  end
+  def utrata(y)
+    if y== 1
+      $zycie = $zycie - 1
+      print"niestety twoj kot spadl na cztery łapy\n"
+      print "kot ma teraz:"
+      print $zycie
+    end
+  end
 end
 $kot.utrata(1)
 #$x=7 sprawia ze zmienna x jest zmienna globalna co oznacza ze moge jej uzywac do jakiej chce funkcji
@@ -75,9 +71,27 @@ $kot.utrata(1)
 #a teraz co robi funkcja utrata po pierwsze zostanie ona aktywowana gdy warunek zostanie spelniony czyli y = 1 i przez to kot spadl na 4 lapy
 #i kot stracil 1 zycie
 
+#a teraz dziedziczenie klasy
+#załóżmy całkiem nową klase
+class Ssak
+  def oddech
+    puts "\nwdech i wydech\n"
+  end
+end
+
+class Kotek < Ssak #w tej chwili klasa Kotek dziedziczy z klasy Ssak funkcje i zmienne
+  def daj_glos
+    puts "Miau"
+  end
+end
+#teraz uzyjemy czegos nowego zapisujac ze kotek = Kotek.new
+kotek = Kotek.new
+kotek.oddech #=> wdech i wydech
+kotek.daj_glos #=> Miau
+
 #A teraz zajmijmy się inna rzecza a dokladnie metoda
 #deklaruje sie to w taki o to sposob
-module kod
+module Kod
 end
 #i w zasadzie mamy gotowa metode
 #aby do niej dodac funkcje musimy dodac przed nazwa self.
@@ -128,9 +142,4 @@ module Kod
   end
   module_function :telefon
 end
-Kod.pocztowy
-Kod.telefon
-#po dopisaniu pod funkcja module_function :nazwa sprawia ze nie musimy dodawac self. 
-#a to :nazwa oznacza ze dziedziczy ta nazwe i jestesmy w stanie ja wykonac
-#=>nr kodu
-#=>45674321
+#po dopisaniu pod funkcja module_function :nazwa sprawia ze nie musimy dodawac self. a to :nazwa oznacza ze dziedziczy ta nazwe i jestesmy w stanie ja wykonac
